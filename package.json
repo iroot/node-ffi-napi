@@ -20,7 +20,7 @@
     "napi",
     "stable"
   ],
-  "homepage": "http://github.com/node-ffi-napi/node-ffi-napi",
+  "homepage": "http://github.com/iroot/node-ffi-napi",
   "engines": {
     "node": ">=4"
   },
@@ -30,21 +30,25 @@
     "debug": "^3.1.0",
     "get-uv-event-loop-napi-h": "^1.0.5",
     "node-addon-api": "1.5.0",
-    "ref-napi": "^1.4.0",
+    "ref-napi": "https://github.com/iroot/ref-napi/tarball/prebuild",
     "ref-struct-di": "^1.1.0"
   },
+  "bundledDependencies": [
+    "prebuild-install"
+  ],
   "devDependencies": {
     "fs-extra": "^5.0.0",
     "mocha": "^5.0.0",
     "nyc": "^12.0.1",
-    "ref-array-di": "^1.2.1"
+    "ref-array-di": "https://github.com/iroot/ref-struct-di/tarball/prebuild"
   },
   "scripts": {
-    "test": "node-gyp rebuild --directory test && nyc mocha -gc --reporter spec"
+    "test": "node-gyp rebuild --directory test && nyc mocha -gc --reporter spec",
+    "install": "prebuild-install || node-gyp rebuild"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/node-ffi-napi/node-ffi-napi.git"
+    "url": "https://github.com/iroot/node-ffi-napi.git"
   },
   "bugs": {
     "url": "http://github.com/node-ffi-napi/node-ffi-napi/issues"
